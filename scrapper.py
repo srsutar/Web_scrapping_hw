@@ -5,7 +5,7 @@ import datetime as dt
 import time
 import re
 
-browser = Browser("chrome", {"executable_path": "/usr/local/bin/chromedriver"}, headless=True)
+browser = Browser("chrome", {"executable_path": "/usr/local/bin/chromedriver"}, headless=False)
 
 def Mars_News(browser):
     url = "https://mars.nasa.gov/news/"

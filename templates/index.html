@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Teams!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">Mission to Mars</h1>
+    <div>
+      <ul style="list-style: none;">
+
+        <li>
+          <p><a role='button' href='/scrape' class="btn btn-secondary btn-lg btn btn-info">Scrape New Data</a></p>
+        </li>
+        <li>
+          <img src={{mars["Feature Images"]}}></img>
+        </li>
+        <li>
+          <!--News paragraph and title next to each other-->
+          <h1>
+            {{mars["News_Title"]}}
+          </h1>
+          <p>
+            {{mars["News Paragraph"]}}
+          </p>
+        </li>
+        <li>
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <h2>{{mars["Hemispheres"][0]["title"]}}</h2>
+                <img src={{mars["Hemispheres"][0]["img_url"]}}></img>
+              </div>
+              <div class="col-6">
+                <h2>{{mars["Hemispheres"][1]["title"]}}</h2>
+                <img src={{mars["Hemispheres"][1]["img_url"]}}></img>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <h2>{{mars["Hemispheres"][2]["title"]}}</h2>
+                <img src={{mars["Hemispheres"][2]["img_url"]}}></img>
+              </div>
+              <div class="col-6">
+                <h2>{{mars["Hemispheres"][3]["title"]}}</h2>
+                <img src={{mars["Hemispheres"][3]["img_url"]}}></img>
+              </div>
+            </div>
+
+        </li>
+      </ul>
+      <section>
+        <div class="jumbotron text-left">
+
+          <h3>Current Weather on Mars</h3>
+          <p>{{mars.Weather}}<p>
+
+        </div>
+        <!--Mars Facts table -->
+        <div class="jumbotron text-left">
+          <h3>Mars Facts (table)</h3>
+          {{mars.Facts | safe}}
+        </div>
+      </section>
+      
+    </div>
+  </div>
+</body>
+
+</html>
